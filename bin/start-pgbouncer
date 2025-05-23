@@ -78,8 +78,9 @@ config-gen() {
 
   for POSTGRES_URL in $POSTGRES_URLS; do
     at "config-gen-override $POSTGRES_URL"
-    echo "setting pgbouncer url $POSTGRES_URL=\$${POSTGRES_URL}_PGBOUNCER"
+    echo "setting pgbouncer url ${POSTGRES_URL}_PGBOUNCER"
     eval "$POSTGRES_URL=\$${POSTGRES_URL}_PGBOUNCER"
+    echo "set pgbouncer url $POSTGRES_URL"
   done
 }
 

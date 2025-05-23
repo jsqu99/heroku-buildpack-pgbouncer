@@ -25,6 +25,7 @@ main() {
     export ${POSTGRES_URL}_PGBOUNCER=postgres://"$db_user":"$db_password"@"$db_host":"$client_port""$db_path""$db_query"
     eval "$POSTGRES_URL=\$${POSTGRES_URL}_PGBOUNCER"
     echo "in use $POSTGRES_URL"
+    echo "in use \$${POSTGRES_URL}"
   done
   at starting-app
   exec "$@"
